@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #de0101">
+  <a class="navbar-brand">
+    <img src="./assets/images/food-logo.png" width="30" height="30" />FOODDEE
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink=''>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/cart'>Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/orders'>Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/login'>Logout</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="toBack()">BACK</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="bannerContainer">
+    <div class="bannerTitle">{{category}}</div>
+  </div>
+
+  <div class="row mainDiv">
+    <div *ngFor="let p of products">
+      
+      <div class="card" class="foodThumb">
+        <img class="card-img-top" [src]="p.image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ p.name | titlecase }} <span class="text-danger float-right">₹{{p.price}}</span></h5>
+          <p class="card-text">Category : {{p.category}}</p>
+          <p class="card-text text-truncate">Ingredients: {{p.ingredients}}</p>
+          <p class="btn btn-danger" (click)="addtoCart(p)">Add To Cart</p>
+          <p class="btn btn-info" (click)="toDetails(p)">View Details</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

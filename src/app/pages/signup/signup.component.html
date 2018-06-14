@@ -1,0 +1,100 @@
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/register">Register</a>
+            </li>
+          </ul>            
+        </div>
+
+        <div class="card-body">
+          <h3 class="card-title">Welcome</h3>
+          <form (ngSubmit)="register()">
+            <fieldset>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text" id="btnGroupAddon">+</div>
+                    </div>
+                    <input class="form-control" placeholder="Name" name="name" type="text" [(ngModel)]="model.name" autofocus>
+                </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="Email" name="email" type="email" [(ngModel)]="model.email"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">#</div>
+                </div>
+                <input class="form-control" placeholder="Mobile" name="mobile" type="number" maxlength="10" [(ngModel)]="model.mobile"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">#</div>
+                </div>
+                <input class="form-control" placeholder="Password" name="password" type="password" [(ngModel)]="model.password">
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="Street" name="street" type="text" [(ngModel)]="model.street"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="Locality" name="locality" type="text" [(ngModel)]="model.locality"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="City" name="city" type="text" [(ngModel)]="model.city"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="State" name="state" type="text" [(ngModel)]="model.state"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="Pincode" name="pincode" type="number" maxlength="6" [(ngModel)]="model.pincode"  autofocus>
+              </div>
+
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">@</div>
+                </div>
+                <input class="form-control" placeholder="India" name="country" type="text" [(ngModel)]="model.country" value="India" readonly  autofocus>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+              <p>Already A Member? <a routerLink="/login" class="">Login</a></p>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>                  
+</div>  
+

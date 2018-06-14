@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #de0101">
+    <a class="navbar-brand">
+      <img src="./assets/images/food-logo.png" width="30" height="30" />FOODDEE
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink=''>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/cart'>Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/orders'>Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/login'>Logout</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="toBack()">BACK</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+
+    <div class="bannerContainer">
+      <div class="bannerTitle">{{product.name | titlecase}}</div>
+    </div>
+
+    <div class="mainThumb">
+      <div class="card" class="foodThumb">
+        <img class="card-img-top" [src]="product.image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name | titlecase }} <span class="text-danger float-right">₹{{product.price}}</span></h5>
+          <p class="card-text">Category : {{product.category}}</p>
+          <p class="card-text text-justify">Ingredients: {{product.ingredients}}</p>
+          <p class="btn btn-danger btn-lg btn-block text-center">Add To Cart</p>
+        </div>
+      </div>
+    </div>
+
+  </div>

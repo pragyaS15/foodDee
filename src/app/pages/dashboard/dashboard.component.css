@@ -1,0 +1,109 @@
+a{
+    color: white;
+}
+.thumbContainer {
+    position: relative;
+    width: 100vw;
+    height: 20vw;
+    margin: 0px;
+
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    
+    background: repeating-linear-gradient(
+    to right,
+    #de0101,
+    #de0101 10px,
+    #fe2e2e 10px,
+    #fe2e2e 20px
+    );
+}
+
+.thumbBack {
+    position: relative;
+    background: green;
+    border: 2px solid black;
+    width: 16vw;
+    height: 16vw;
+    margin-left: 4vw;
+    top: 36%;
+}
+
+.thumbVeg {
+    position: relative;
+    background-image: url("/assets/images/veg-sandwich.jpg");
+    border: 1px solid rgba(0, 0, 0, 0.46);
+    width: 16vw;
+    height: 16vw;
+    margin: 4vw;
+    top: 36%;
+
+    border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+
+}
+
+.thumbNonVeg {
+    position: relative;
+    background-image: url("/assets/images/egg-burger.jpg");
+    border: 1px solid rgba(0, 0, 0, 0.46);
+    width: 16vw;
+    height: 16vw;
+    margin: 4vw;
+    top: 36%;
+
+    border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.thumbBeverages {
+    position: relative;
+    background-image: url("/assets/images/mango-shake.jpg");
+    border: 1px solid rgba(0, 0, 0, 0.46);
+    width: 16vw;
+    height: 16vw;
+    margin: 4vw;
+    top: 36%;
+
+    border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.thumbAll {
+    position: relative;
+    background-image: url("/assets/images/hakka-noodles.jpg");
+    border: 1px solid rgba(0, 0, 0, 0.46);
+    width: 16vw;
+    height: 16vw;
+    margin: 4vw;
+    top: 36%;
+
+    border-bottom: 0 none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+
+.thumbTitle{
+    position: absolute;
+    top: 42%;
+    text-align: center;
+    width: 100%;
+    font-size: 1.6vw;
+    font-weight: bold;
+    color: #fff;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.nav-item:hover {
+    background-color: white;
+    color: #de0101 !important;
+    font-weight: bold;
+}

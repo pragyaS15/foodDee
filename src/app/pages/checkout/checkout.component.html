@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #de0101">
+  <a class="navbar-brand">
+    <img src="./assets/images/food-logo.png" width="30" height="30" />FOODDEE
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink=''>Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink='/cart'>Cart</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/orders'>Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/login'>Logout</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="toBack()">BACK</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div>
+  <div class="bannerContainer">
+    <div class="bannerTitle">Checking out</div>
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="card-header">
+        Address
+      </div>
+      <div class="card-body">
+        <p class="card-text">Street: {{address.street}}</p>
+        <p class="card-text">Locality: {{address.locality}}</p>
+        <p class="card-text">City: {{address.city}}</p>
+        <p class="card-text">Pincode: {{address.pincode}}</p>
+        <p class="card-text">State: {{address.state}}</p>
+        <p class="card-text">Country: {{address.country}}</p>
+      </div>
+      <div class="card-footer">
+        <p class="card-text">Total Amount : <span class="text-danger">₹{{total}}</span></p>
+        <p class="card-text text-muted">(Cash On Delivery)</p>
+      </div>
+    </div>
+    <li>
+      <p class="btn btn-success btn-block" (click)="toConfirm()">Confirm</p>
+    </li>
+  </div>
+
+</div>

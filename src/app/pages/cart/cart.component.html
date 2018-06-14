@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #de0101">
+    <a class="navbar-brand">
+      <img src="./assets/images/food-logo.png" width="30" height="30" />FOODDEE
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink=''>Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/cart'>Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/orders'>Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/login'>Logout</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="toBack()">BACK</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+
+    <div class="bannerContainer">
+      <div class="bannerTitle">Cart</div>
+    </div>
+
+    <div>
+      <ul class="list-group" *ngFor="let item of items">
+        <li class="list-group-item ">
+            <span class="listItem">{{item.name}}</span> 
+            <span class="text-danger listItem">₹{{item.price}}</span>
+            <span class="listItem">Qty. {{item.quantity}}</span>
+            <span class="listItem">{{item.category}}</span>
+            <span class="listItem btn btn-primary" (click)="updateItem(item)">ADD(+1)</span>
+            <span class="listItem btn btn-danger" (click)="removeItem(item)">REMOVE</span>
+        </li>
+      </ul>
+      <li class=list-group-item>
+        <span class="listItem">Total Amount : </span>
+        <span class="text-danger listItem">₹{{totalprice}}</span>+
+        <span class="listItem">Delivery Charges: </span>
+        <span class="text-danger listItem">₹{{deliveryCharges}}</span>=
+        <span class="text-danger listItem">₹{{totalCharges}}</span>
+      </li>
+      <li>
+        <p class="btn btn-success btn-block" (click)="toCheckout()">Check Out</p>
+      </li>
+    </div>
+  </div>
