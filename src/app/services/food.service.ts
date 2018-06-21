@@ -17,13 +17,21 @@ export class FoodService {
   }
 
   getCategorized(selectedcategory){
-    this.products = JSON.parse(localStorage.getItem('products') || "[]");
+    this.products = JSON.parse(localStorage.getItem('products'));
     console.log(this.products);
-    //this.products = localStorage.getItem('products');
+
+    if(selectedcategory == 'all') { 
+      let allProducts = this.products;
+      console.log("allProducts: ", allProducts);
+      return allProducts;
+    } else {
+      
     let filteredfood = this.products.filter((product: any) => {
       return product.category.toLowerCase().indexOf(selectedcategory.toLowerCase()) > -1;
     });
+
     return filteredfood;
+    }
   }
 
 }

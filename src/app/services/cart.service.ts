@@ -24,6 +24,11 @@ export class CartService {
   }
 
   removeItem(item: any) {
+    console.log("https://fooddee.herokuapp.com/cart/" + item._id);
     return this.http.delete("https://fooddee.herokuapp.com/cart/" + item._id, { headers: this.header});
+  }
+
+  removeAll(email: any) {
+    return this.http.delete("https://fooddee.herokuapp.com/cart/all/" +  email, { headers: this.header});
   }
 }

@@ -16,6 +16,7 @@ export class CheckoutComponent implements OnInit {
   total;
   address;
   order: any = {};
+  itemsLength;
 
   constructor(private router: Router, private _location: Location,
     private cartService: CartService, private alertService: AlertService,
@@ -44,6 +45,7 @@ export class CheckoutComponent implements OnInit {
       this.order.email = this.currentUserData.user.email;
       this.order.name = this.currentUserData.user.name;
 
+      this.itemsLength = this.items.length;
       console.log(this.order);
       this.orderService.addOrder(this.order)
       .subscribe(
@@ -51,6 +53,11 @@ export class CheckoutComponent implements OnInit {
           console.log(data);
           if(data.message === 'Order Confirmed') {
             this.alertService.success('Order Confirmation Successful', true);
+            for(var i=0; i < this.itemsLength; i++) {
+              this.removeItem(this.items[i]);
+            }
+            //this.removeItems();
+            //this.removeAll();
             this.router.navigateByUrl('');
           } else {
             this.alertService.error(data.message, false);
@@ -63,8 +70,47 @@ export class CheckoutComponent implements OnInit {
       );
     }
   
+    removeAll() {
+      this.cartService.removeAll(this.order.email)
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+        },
+        error => {
+          this.alertService.error(error);
+          console.log('Error has occurred during adding to cart');
+        }
+      );
+    }
+
+    removeItem(item) {
+      console.log("LENGTH : " + this.items.length);
+      var itemLength = this.items.length;
+
+      this.cartService.removeItem(item)
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+          if(data.message === 'Deleted from cart!') {
+            this.alertService.success('Item Removal From Cart Successful', true);
+            //this.router.navigateByUrl('');
+          } else {
+            this.alertService.error(data.message, false);
+          }
+        },
+        error => { 
+          this.alertService.error(error);
+          console.log('Error has occurred during adding to cart');
+        }
+      );
+
+    }
+  
 
   ngOnInit() {
   }
 
+  toBack(){
+    this._location.back();
+  }
 }

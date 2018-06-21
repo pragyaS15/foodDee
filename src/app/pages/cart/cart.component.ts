@@ -39,11 +39,15 @@ export class CartComponent implements OnInit {
     //this.getTotal();
   }
 
+  toBack(){
+    this._location.back();
+  }
+
   getTotal(items) {
     let total = 0;
     for(var i=0; i < items.length; i++) {
       if(items[i].price) {
-        total += parseInt(items[i].price);
+        total += parseInt(items[i].price) * parseInt(items[i].quantity);
       }
     }
     this.totalprice = total;
